@@ -4,9 +4,9 @@
         "analytics": null
     },
     "emojis": [
-        "https://raw.githubusercontent.com/Team-Fruit/Emojicord/api/emojis/emojis.min.json"
+        "https://raw.githubusercontent.com/AnasDevO/Emojicord-ATTEMPTED-fix/patch-1/emojis/emojis.min.json"
     ],
     "picker": [
-        "https://raw.githubusercontent.com/Team-Fruit/Emojicord/api/picker/picker.min.json"
+        "https://raw.githubusercontent.com/AnasDevO/Emojicord-ATTEMPTED-fix/patch-1/picker/picker.min.json"
     ]
 }
