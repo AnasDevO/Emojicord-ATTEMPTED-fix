@@ -41,9 +41,7 @@
           "name": "laughing",
           "strings": [
             "laughing",
-            "satisfied",
-            "x-)",
-            "X-)"
+            "satisfied"
           ],
           "location": "1f606.png",
           "surrogates": "😆"
@@ -247,9 +245,7 @@
         {
           "name": "sunglasses",
           "strings": [
-            "sunglasses",
-            "8-)",
-            "B-)"
+            "sunglasses"
           ],
           "location": "1f60e.png",
           "surrogates": "😎"
