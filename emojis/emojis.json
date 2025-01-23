@@ -23541,6 +23541,14 @@
           "surrogates": "🔴"
         },
         {
+          "name": "blue_circle",
+          "strings": [
+            "blue_circle"
+          ],
+          "location": "1f535.png",
+          "surrogates": "🔵"
+        },
+        {
           "name": "brown_circle",
           "strings": [
             "brown_circle"
