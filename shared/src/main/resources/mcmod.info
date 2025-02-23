@@ -3,12 +3,13 @@
 	"modList": [
 		{
 			"modid": "emojicord",
-			"name": "Emojicord",
-			"description": "Discord Emojis in Minecraft",
+			"name": "GoslingCord",
+			"description": "Become interlinked in Minecraft with Discord emojis",
 			"authorList": [
-				"Kamesuta"
+				"Kamesuta",
+				"Thermonuclear_minecraft_engineer"
 			],
-			"credits": "2019 TeamFruit",
+			"credits": "2025 Myself",
 			"logoFile": "logo.png",
 			"license": "MIT",
 			"screenshots": [],

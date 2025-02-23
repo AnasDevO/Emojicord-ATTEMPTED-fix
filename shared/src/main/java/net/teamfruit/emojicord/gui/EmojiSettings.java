@@ -177,9 +177,9 @@ public class EmojiSettings implements IChatOverlay {
 
 			{
 				OpenGL.glPushMatrix();
-				OpenGL.glTranslatef(this.rectLogo.getX(), this.rectLogo.getY() + 2, 0);
+				OpenGL.glTranslatef(this.rectLogo.getX() + 3, this.rectLogo.getY() + 3, 0);
 				OpenGL.glScalef(5, 5, 1);
-				drawString(compatMatrixStack, "<:emojicord:631339297886175295>", 0, 0, 0xFFFFFFFF);
+				drawString(compatMatrixStack, "<:logo:1343350433317388378>", 0, 0, 0xFFFFFFFF);
 				OpenGL.glPopMatrix();
 			}
 
@@ -187,7 +187,7 @@ public class EmojiSettings implements IChatOverlay {
 				{
 					final String name = Reference.NAME;
 					drawString(compatMatrixStack, name, this.rectName.getX(), this.rectName.getY() - 15, 0xFFFFFFFF);
-					drawString(compatMatrixStack, "by TeamFruit", this.rectName.getX() + 5 + EmojiSettings.this.font.getStringWidth(name), this.rectName.getY() - 15, 0xFF777777);
+					drawString(compatMatrixStack, "by RGosling/TeamFruit", this.rectName.getX() + 5 + EmojiSettings.this.font.getStringWidth(name), this.rectName.getY() - 15, 0xFF777777);
 				}
 				{
 					final boolean b = this.rectUpdate.contains(EmojiSettings.this.mouseX, EmojiSettings.this.mouseY);
@@ -206,7 +206,7 @@ public class EmojiSettings implements IChatOverlay {
 					drawString(compatMatrixStack, Reference.NAME, 0, 0, 0xFFFFFFFF);
 					OpenGL.glPopMatrix();
 				}
-				drawString(compatMatrixStack, "by TeamFruit", this.rectName.getX() + 10, this.rectName.getY() + 15, 0xFF777777);
+				drawString(compatMatrixStack, "by RGosling/TeamFruit", this.rectName.getX() + 10, this.rectName.getY() + 15, 0xFF777777);
 			}
 
 			if (EmojiSettings.this.addGui == null) {
