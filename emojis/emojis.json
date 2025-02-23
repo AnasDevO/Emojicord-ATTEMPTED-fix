@@ -3,6 +3,16 @@
   "versionTimestamp": "2019-03-16T18:58:28.8413165+00:00",
   "groups": [
     {
+      "location": "https://raw.githubusercontent.com/AnasDevO/Emojicord-ATTEMPTED-fix/refs/heads/Re-patch/base",
+      "emojis":{
+        "name": "logo",
+        "strings": [
+            "logo"
+          ],
+        "location": "logo.png"
+      }
+    }
+    {
       "location": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/72x72/",
       "emojis": [
         {
