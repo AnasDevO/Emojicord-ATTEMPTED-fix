@@ -6,6 +6,10 @@
       "location": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/72x72/",
       "emojis": [
         {
+          "name":"logo",
+          "id":"1343350433317388378"
+        },
+        {
           "name": "grinning",
           "strings": [
             "grinning"
