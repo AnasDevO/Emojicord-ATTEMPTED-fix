@@ -3,6 +3,16 @@
   "versionTimestamp": "2019-03-16T18:58:28.8413165+00:00",
   "groups": [
     {
+      "emojis": [
+        {
+          "name":"logo",
+          "id":"1343350433317388378",
+          "strings":[
+            "logo"
+          ]
+        }
+    },
+    {
       "location": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/72x72/",
       "emojis": [
         {
