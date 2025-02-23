@@ -291,7 +291,8 @@ public class EmojiSelectionChat implements IChatOverlay {
 							if (this.selectedColor > 0)
 								if (EmojiId.StandardEmojiId.fromAlias(StringUtils.strip(item.name, ":") + ":skin-tone-" + this.selectedColor) != null)
 									tone = ":skin-tone-" + this.selectedColor + ":";
-							drawString(compatMatrixStack, item.name + tone, rect.getX() + emojiMargin, rect.getY() + emojiMargin, 0xFFFFFFFF);
+							if (item != null)
+								drawString(compatMatrixStack, item.name + tone, rect.getX() + emojiMargin, rect.getY() + emojiMargin, 0xFFFFFFFF);
 							if (rect.contains(EmojiSelectionChat.this.mouseX, EmojiSelectionChat.this.mouseY)) {
 								this.selecting = item;
 								if (!(this.selectedGroupIndex == groupIndex && this.selectedIndex == index)) {
