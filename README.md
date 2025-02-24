@@ -15,6 +15,7 @@
 ## About
 
 Become interlinked, reset your baseline, and Send discord emojis in Minecraft :D
+This repo can be ran to provide jars for other minecraft versions, i will however only support 1.12.2.
 
 ## Contacts
 
