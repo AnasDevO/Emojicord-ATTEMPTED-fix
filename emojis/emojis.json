@@ -15061,11 +15061,12 @@
     {
       "emojis": [
         {
-        "name": "gosling",
+        "name": "logo",
         "strings": [
-          "gosling"
+          "logo"
         ],
-        "EmojiId": "https://cdn.discordapp.com/emojis/1343350433317388378"
+        "location": "https://cdn.discordapp.com/emojis/1343350433317388378",
+        "surrogates": "logo"
         }
       ]
     }
