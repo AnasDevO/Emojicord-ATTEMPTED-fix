@@ -15059,13 +15059,14 @@
       ]
     },
     {
+      "location": "https://cdn.discordapp.com/emojis/",
       "emojis": [
         {
         "name": "logo",
         "strings": [
           "logo"
         ],
-        "id": "1343350433317388378"
+        "location": "1343350433317388378"
         }
       ]
     }
