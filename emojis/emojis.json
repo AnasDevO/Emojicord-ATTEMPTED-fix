@@ -15059,14 +15059,13 @@
       ]
     },
     {
-      "location": "https://cdn.discordapp.com/emojis/",
       "emojis": [
         {
-        "name": "logo",
+        "name": "gosling",
         "strings": [
-          "logo"
+          "gosling"
         ],
-        "id": "1343350433317388378"
+        "id": "https://cdn.discordapp.com/emojis/1343350433317388378"
         }
       ]
     }
