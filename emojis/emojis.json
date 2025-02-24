@@ -32,23 +32,7 @@
         {
           "name": "joy",
           "strings": [
-            "joy",
-            ":')",
-            ":'-)",
-            ":,)",
-            ":,-)",
-            ":'D",
-            ":'-D",
-            ":,D",
-            ":,-D",
-            "=')",
-            "='-)",
-            "=,)",
-            "=,-)",
-            "='D",
-            "='-D",
-            "=,D",
-            "=,-D"
+            "joy"
           ],
           "location": "1f602.png",
           "surrogates": "😂"
@@ -56,11 +40,7 @@
         {
           "name": "smiley",
           "strings": [
-            "smiley",
-            ":)",
-            ":-)",
-            "=)",
-            "=-)"
+            "smiley"
           ],
           "location": "1f603.png",
           "surrogates": "😃"
@@ -68,11 +48,7 @@
         {
           "name": "smile",
           "strings": [
-            "smile",
-            ":D",
-            ":-D",
-            "=D",
-            "=-D"
+            "smile"
           ],
           "location": "1f604.png",
           "surrogates": "😄"
@@ -80,11 +56,7 @@
         {
           "name": "sweat_smile",
           "strings": [
-            "sweat_smile",
-            ",:)",
-            ",:-)",
-            ",=)",
-            ",=-)"
+            "sweat_smile"
           ],
           "location": "1f605.png",
           "surrogates": "😅"
@@ -93,9 +65,7 @@
           "name": "laughing",
           "strings": [
             "laughing",
-            "satisfied",
-            "x-)",
-            "X-)"
+            "satisfied"
           ],
           "location": "1f606.png",
           "surrogates": "😆"
@@ -103,19 +73,7 @@
         {
           "name": "innocent",
           "strings": [
-            "innocent",
-            "o:)",
-            "O:)",
-            "o:-)",
-            "O:-)",
-            "0:)",
-            "0:-)",
-            "o=)",
-            "O=)",
-            "o=-)",
-            "O=-)",
-            "0=)",
-            "0=-)"
+            "innocent"
           ],
           "location": "1f607.png",
           "surrogates": "😇"
@@ -123,9 +81,7 @@
         {
           "name": "wink",
           "strings": [
-            "wink",
-            ";)",
-            ";-)"
+            "wink"
           ],
           "location": "1f609.png",
           "surrogates": "😉"
@@ -133,11 +89,7 @@
         {
           "name": "blush",
           "strings": [
-            "blush",
-            ":\")",
-            ":-\")",
-            "=\")",
-            "=-\")"
+            "blush"
           ],
           "location": "1f60a.png",
           "surrogates": "😊"
@@ -203,11 +155,7 @@
         {
           "name": "kissing",
           "strings": [
-            "kissing",
-            ":*",
-            ":-*",
-            "=*",
-            "=-*"
+            "kissing"
           ],
           "location": "1f617.png",
           "surrogates": "😗"
@@ -247,11 +195,7 @@
         {
           "name": "stuck_out_tongue",
           "strings": [
-            "stuck_out_tongue",
-            ":P",
-            ":-P",
-            "=P",
-            "=-P"
+            "stuck_out_tongue"
           ],
           "location": "1f61b.png",
           "surrogates": "😛"
@@ -277,9 +221,7 @@
         {
           "name": "sunglasses",
           "strings": [
-            "sunglasses",
-            "8-)",
-            "B-)"
+            "sunglasses"
           ],
           "location": "1f60e.png",
           "surrogates": "😎"
@@ -312,11 +254,7 @@
         {
           "name": "neutral_face",
           "strings": [
-            "neutral_face",
-            ":|",
-            ":-|",
-            "=|",
-            "=-|"
+            "neutral_face"
           ],
           "location": "1f610.png",
           "surrogates": "😐"
@@ -332,19 +270,7 @@
         {
           "name": "unamused",
           "strings": [
-            "unamused",
-            ":s",
-            ":-S",
-            ":z",
-            ":-Z",
-            ":$",
-            ":-$",
-            "=s",
-            "=-S",
-            "=z",
-            "=-Z",
-            "=$",
-            "=-$"
+            "unamused"
           ],
           "location": "1f612.png",
           "surrogates": "😒"
@@ -394,11 +320,7 @@
         {
           "name": "angry",
           "strings": [
-            "angry",
-            ">:(",
-            ">:-(",
-            ">=(",
-            ">=-("
+            "angry"
           ],
           "location": "1f620.png",
           "surrogates": "😠"
@@ -406,11 +328,7 @@
         {
           "name": "rage",
           "strings": [
-            "rage",
-            ":@",
-            ":-@",
-            "=@",
-            "=-@"
+            "rage"
           ],
           "location": "1f621.png",
           "surrogates": "😡"
@@ -426,11 +344,7 @@
         {
           "name": "confused",
           "strings": [
-            "confused",
-            ":-\\",
-            ":-/",
-            "=-\\",
-            "=-/"
+            "confused"
           ],
           "location": "1f615.png",
           "surrogates": "😕"
@@ -496,15 +410,7 @@
         {
           "name": "open_mouth",
           "strings": [
-            "open_mouth",
-            ":o",
-            ":-o",
-            ":O",
-            ":-O",
-            "=o",
-            "=-o",
-            "=O",
-            "=-O"
+            "open_mouth"
           ],
           "location": "1f62e.png",
           "surrogates": "😮"
@@ -544,11 +450,7 @@
         {
           "name": "frowning",
           "strings": [
-            "frowning",
-            ":(",
-            ":-(",
-            "=(",
-            "=-("
+            "frowning"
           ],
           "location": "1f626.png",
           "surrogates": "😦"
@@ -564,15 +466,7 @@
         {
           "name": "cry",
           "strings": [
-            "cry",
-            ":'(",
-            ":'-(",
-            ":,(",
-            ":,-(",
-            "='(",
-            "='-(",
-            "=,(",
-            "=,-("
+            "cry"
           ],
           "location": "1f622.png",
           "surrogates": "😢"
@@ -596,11 +490,7 @@
         {
           "name": "sweat",
           "strings": [
-            "sweat",
-            ",:(",
-            ",:-(",
-            ",=(",
-            ",=-("
+            "sweat"
           ],
           "location": "1f613.png",
           "surrogates": "😓"
@@ -608,13 +498,7 @@
         {
           "name": "sob",
           "strings": [
-            "sob",
-            ":,'(",
-            ":,'-(",
-            ";(",
-            ";-(",
-            "=,'(",
-            "=,'-("
+            "sob"
           ],
           "location": "1f62d.png",
           "surrogates": "😭"
@@ -700,11 +584,7 @@
         {
           "name": "smiling_imp",
           "strings": [
-            "smiling_imp",
-            "]:)",
-            "]:-)",
-            "]=)",
-            "]=-)"
+            "smiling_imp"
           ],
           "location": "1f608.png",
           "surrogates": "😈"
@@ -712,11 +592,7 @@
         {
           "name": "imp",
           "strings": [
-            "imp",
-            "]:(",
-            "]:-(",
-            "]=(",
-            "]=-("
+            "imp"
           ],
           "location": "1f47f.png",
           "surrogates": "👿"
