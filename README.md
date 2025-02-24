@@ -1,12 +1,6 @@
-[![Latest Tag](https://img.shields.io/github/tag/Team-Fruit/Emojicord.svg?label=Latest%20Tag&style=flat)](https://github.com/Team-Fruit/Emojicord/tags)
-[![Latest Release](https://img.shields.io/github/release/Team-Fruit/Emojicord.svg?label=Latest%20Release&style=flat)](https://github.com/Team-Fruit/Emojicord/releases)
-
-# Emojicord
-![Minecraft 1.7.10](https://img.shields.io/badge/Minecraft-1.7.10-yellow.svg?style=flat)
-![Minecraft 1.10.2](https://img.shields.io/badge/Minecraft-1.10.2-green.svg?style=flat)
+# GoslingCord
 ![Minecraft 1.12.2](https://img.shields.io/badge/Minecraft-1.12.2-green.svg?style=flat)
-![Minecraft 1.14.4](https://img.shields.io/badge/Minecraft-1.14.4-green.svg?style=flat)
-![Minecraft 1.15.2](https://img.shields.io/badge/Minecraft-1.15.2-green.svg?style=flat)
+
 
 ## Table of Contents
 
@@ -20,16 +14,16 @@
 
 ## About
 
-Discord Emojis in Minecraft
+Become interlinked, reset your baseline, and Send discord emojis in Minecraft :D
 
 ## Contacts
 
-[![Discord](https://discordapp.com/assets/bb408e0343ddedc0967f246f7e89cebf.svg)](https://discord.gg/zAmvPqV)
+[![Discord](https://discordapp.com/assets/bb408e0343ddedc0967f246f7e89cebf.svg)](https://discord.gg/FqxBJwKP)
 
 ## License
 
-* Emojicord
-  - (c) 2019-2020 TeamFruit
+* GoslingCord
+  - (c) 2025 Thermonuclear_minecraft_engineer
   - [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/mit-license.php)
 
 ## Downloads
