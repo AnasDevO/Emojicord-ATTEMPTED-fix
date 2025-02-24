@@ -69,7 +69,7 @@ ext {
 		if (mod_buildnumber)
 			return [".${mod_buildnumber}", '']
 		else
-			return [".git", '']
+			return [".${mod_buildnumber}", '']
 	})()
 
 	mod_version = "${mod_version_min}${mod_version_build}"
