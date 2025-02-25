@@ -29,7 +29,7 @@ Become interlinked, reset your baseline, and Send discord emojis in Minecraft :D
 
 ## Downloads
 
-Downloads can be found on [CurseForge]([https://www.curseforge.com/minecraft/mc-mods/emojicord](https://www.curseforge.com/minecraft/mc-mods/goslingcord)).
+Downloads can be found on [CurseForge]([https://www.curseforge.com/minecraft/mc-mods/goslingcord]).
 
 ## Usage
 
