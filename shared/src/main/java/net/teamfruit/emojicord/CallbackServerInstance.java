@@ -30,19 +30,20 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.DefaultBHttpServerConnection;
 import org.apache.http.impl.DefaultBHttpServerConnectionFactory;
-import org.apache.http.message.BasicHeader;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.protocol.HttpProcessor;
-import org.apache.http.protocol.HttpProcessorBuilder;
-import org.apache.http.protocol.HttpRequestHandler;
-import org.apache.http.protocol.HttpService;
-import org.apache.http.protocol.ResponseConnControl;
-import org.apache.http.protocol.ResponseContent;
-import org.apache.http.protocol.ResponseDate;
-import org.apache.http.protocol.ResponseServer;
-import org.apache.http.protocol.UriHttpRequestHandlerMapper;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.core5.http.message.BasicHeader;
+import org.apache.hc.core5.http.protocol.BasicHttpContext;
+import org.apache.hc.core5.http.protocol.HttpContext;
+import org.apache.hc.core5.http.protocol.HttpProcessor;
+import org.apache.hc.core5.http.protocol.HttpProcessorBuilder;
+import org.apache.hc.core5.http.impl.io.HttpService;
+import org.apache.hc.core5.http.protocol.ResponseConnControl;
+import org.apache.hc.core5.http.protocol.ResponseContent;
+import org.apache.hc.core5.http.protocol.ResponseDate;
+import org.apache.hc.core5.http.protocol.ResponseServer;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.impl.routing.RequestRouter;
+import org.apache.hc.core5.net.URIAuthority;
+import org.apache.hc.core5.http.io.HttpRequestHandler;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
@@ -76,8 +77,10 @@ public class CallbackServerInstance implements AutoCloseable {
 				.build();
 
 		// Set up request handlers
-		final UriHttpRequestHandlerMapper reqistry = new UriHttpRequestHandlerMapper();
-		reqistry.register("*", new HttpCallbackHandler());
+		final RequestRouter<HttpRequestHandler> reqistry = RequestRouter.<HttpRequestHandler>builder()
+				.addRoute((URIAuthority) null, "*", new HttpCallbackHandler())
+				.build();
+
 
 		// Set up the HTTP service
 		final HttpService httpService = new HttpService(httpproc, reqistry);
