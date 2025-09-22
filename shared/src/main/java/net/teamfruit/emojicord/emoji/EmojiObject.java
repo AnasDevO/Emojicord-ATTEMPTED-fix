@@ -22,14 +22,14 @@ import net.teamfruit.emojicord.util.Timer;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.message.BasicHeader;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.protocol.HttpClientContext;
+import org.apache.hc.core5.http.message.BasicHeader;
 
 import javax.annotation.Nonnull;
 import java.awt.image.BufferedImage;
@@ -254,7 +254,7 @@ public class EmojiObject {
 					response = Downloader.downloader.client.execute(req, context);
 					final HttpEntity entity = response.getEntity();
 
-					final int statusCode = response.getStatusLine().getStatusCode();
+					final int statusCode = response.getCode();
 					if (statusCode != HttpStatus.SC_OK)
 						throw new IOException("Invalid Status Code: " + statusCode);
 

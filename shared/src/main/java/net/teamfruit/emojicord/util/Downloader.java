@@ -17,21 +17,23 @@ import javax.annotation.Nullable;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 
-import org.apache.http.Header;
-import org.apache.http.HttpHost;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.config.RequestConfig.Builder;
-import org.apache.http.config.Registry;
-import org.apache.http.config.RegistryBuilder;
-import org.apache.http.conn.socket.ConnectionSocketFactory;
-import org.apache.http.conn.socket.PlainConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLContextBuilder;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.message.BasicHeader;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.HttpHost;
+import org.apache.hc.client5.http.config.RequestConfig;
+import org.apache.hc.client5.http.config.RequestConfig.Builder;
+import org.apache.hc.core5.http.config.Registry;
+import org.apache.hc.core5.http.config.RegistryBuilder;
+import org.apache.hc.client5.http.socket.ConnectionSocketFactory;
+import org.apache.hc.client5.http.socket.PlainConnectionSocketFactory;
+import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
+import org.apache.hc.core5.ssl.SSLContextBuilder;
+import org.apache.hc.client5.http.ssl.TrustSelfSignedStrategy;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
+import org.apache.hc.core5.http.message.BasicHeader;
+import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
+import org.apache.hc.core5.util.Timeout;
 
 import net.teamfruit.emojicord.compat.Compat;
 
@@ -57,7 +59,7 @@ public class Downloader {
 					.build();
 			final SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(
 					sslContext,
-					SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER) {
+					NoopHostnameVerifier.INSTANCE) {
 				@Override
 				protected void prepareSocket(final @Nullable SSLSocket socket) throws IOException {
 					if (socket!=null) {
@@ -92,8 +94,8 @@ public class Downloader {
 		final Builder requestConfig = RequestConfig.custom();
 
 		if (timeout>0) {
-			requestConfig.setConnectTimeout(timeout);
-			requestConfig.setSocketTimeout(timeout);
+			requestConfig.setConnectTimeout(Timeout.ofMilliseconds(timeout));
+			requestConfig.setResponseTimeout(Timeout.ofMilliseconds(timeout));
 		}
 
 		final Proxy proxy = Compat.getMinecraft().getProxy();

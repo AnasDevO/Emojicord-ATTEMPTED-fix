@@ -5,6 +5,7 @@ repositories {
 }
 dependencies {
 	shade 'com.mojang:brigadier:1.0.17'
+	shade 'org.apache.httpcomponents.client5:httpclient5:5.5'
 }
 
 shadowJar {

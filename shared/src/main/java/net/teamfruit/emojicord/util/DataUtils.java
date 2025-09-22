@@ -12,13 +12,14 @@ import javax.annotation.Nullable;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.StringBuilderWriter;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpResponseException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.client5.http.HttpResponseException;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.protocol.HttpClientContext;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 
 import com.google.common.base.Charsets;
 import com.google.gson.Gson;
@@ -152,10 +153,10 @@ public class DataUtils {
 	private static InputStream getUrl(final String url) throws Exception {
 		final HttpUriRequest req = new HttpGet(url);
 		final HttpClientContext context = HttpClientContext.create();
-		final HttpResponse response = Downloader.downloader.client.execute(req, context);
+		final CloseableHttpResponse response = Downloader.downloader.client.execute(req, context);
 		final HttpEntity entity = response.getEntity();
 
-		final int statusCode = response.getStatusLine().getStatusCode();
+		final int statusCode = response.getCode();
 		if (statusCode!=HttpStatus.SC_OK)
 			throw new HttpResponseException(statusCode, "Invalid status code: "+url);
 

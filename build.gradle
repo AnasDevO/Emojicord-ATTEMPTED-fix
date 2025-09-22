@@ -212,16 +212,16 @@ publishing {
 		}
 	}
 
-	if (!mod_autorelease) {
-		repositories {
-			maven {
-				name = "GitHubPackages"
-				url = uri("https://maven.pkg.github.com/${project.extra_github_owner}/${project.extra_github_repo}")
-				credentials {
-					username = sec_github_user
-					password = sec_github_key
-				}
-			}
-		}
-	}
+//	if (!mod_autorelease) {
+//		repositories {
+//			maven {
+//				name = "GitHubPackages"
+//				url = uri("https://maven.pkg.github.com/${project.extra_github_owner}/${project.extra_github_repo}")
+//				credentials {
+//					username = sec_github_user
+//					password = sec_github_key
+//				}
+//			}
+//		}
+//	}
 }
