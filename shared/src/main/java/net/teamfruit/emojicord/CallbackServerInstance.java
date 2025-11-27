@@ -15,34 +15,6 @@ import java.util.function.Predicate;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-//import org.apache.http.ConnectionClosedException;
-//import org.apache.http.Header;
-//import org.apache.http.HttpConnectionFactory;
-//import org.apache.http.HttpEntity;
-//import org.apache.http.HttpEntityEnclosingRequest;
-//import org.apache.http.HttpException;
-//import org.apache.http.HttpHeaders;
-//import org.apache.http.HttpRequest;
-//import org.apache.http.HttpResponse;
-//import org.apache.http.HttpServerConnection;
-//import org.apache.http.HttpStatus;
-//import org.apache.http.entity.ContentType;
-//import org.apache.http.entity.StringEntity;
-//import org.apache.http.impl.DefaultBHttpServerConnection;
-//import org.apache.http.impl.DefaultBHttpServerConnectionFactory;
-//import org.apache.http.message.BasicHeader;
-//import org.apache.http.protocol.BasicHttpContext;
-//import org.apache.http.protocol.HttpContext;
-//import org.apache.http.protocol.HttpProcessor;
-//import org.apache.http.protocol.HttpProcessorBuilder;
-//import org.apache.http.protocol.HttpRequestHandler;
-//import org.apache.http.protocol.HttpService;
-//import org.apache.http.protocol.ResponseConnControl;
-//import org.apache.http.protocol.ResponseContent;
-//import org.apache.http.protocol.ResponseDate;
-//import org.apache.http.protocol.ResponseServer;
-//import org.apache.http.protocol.UriHttpRequestHandlerMapper;
-//import org.apache.http.util.EntityUtils;
 import org.apache.hc.core5.http.io.HttpRequestHandler;
 import org.apache.hc.core5.http.HttpRequest;
 import org.apache.hc.core5.http.HttpResponse;
@@ -73,6 +45,7 @@ import org.apache.hc.core5.http.ContentType;
 import org.apache.hc.core5.http.Header;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.HttpEntityContainer;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
@@ -106,9 +79,9 @@ public class CallbackServerInstance implements AutoCloseable {
                 .build();
 
         // Set up request handlers
-//        final UriHttpRequestHandlerMapper reqistry = new UriHttpRequestHandlerMapper();
+        // final UriHttpRequestHandlerMapper reqistry = new UriHttpRequestHandlerMapper();
         final RequestRouter<HttpRequestHandler> registry = RequestRouter.<HttpRequestHandler>builder()
-                .addRoute((URIAuthority) null, "*", new HttpCallbackHandler())
+                .addRoute("*", "*", new HttpCallbackHandler())
                 .build();
 
         BasicHttpServerRequestHandler serverHandler = new BasicHttpServerRequestHandler(registry);
@@ -242,14 +215,14 @@ public class CallbackServerInstance implements AutoCloseable {
                 return;
             }
 
-            if (!(request instanceof HttpEntityEnclosingRequest)) {
+            if (!(request instanceof HttpEntityContainer)) {
                 response.setCode(HttpStatus.SC_BAD_REQUEST);
                 response.setEntity(new StringEntity("NG\nNo Request Data", ContentType.create("text/plain", StandardCharsets.UTF_8)));
                 Log.log.warn("Invalid Request: No Request Data");
                 return;
             }
 
-            final HttpEntityEnclosingRequest eRequest = (HttpEntityEnclosingRequest) request;
+            final HttpEntityContainer eRequest = (HttpEntityContainer) request;
             final HttpEntity entity = eRequest.getEntity();
             //if (eRequest.expectContinue()) {}
             final byte[] data = EntityUtils.toByteArray(entity);
