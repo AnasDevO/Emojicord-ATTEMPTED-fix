@@ -66,6 +66,13 @@ import org.apache.hc.core5.http.io.HttpServerConnection;
 import org.apache.hc.core5.http.protocol.BasicHttpContext;
 import org.apache.hc.core5.http.ConnectionClosedException;
 import org.apache.hc.core5.http.message.BasicHeader;
+import org.apache.hc.core5.http.HttpHeaders;
+import org.apache.hc.core5.http.HttpStatus;
+import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
@@ -158,7 +165,7 @@ public class CallbackServerInstance implements AutoCloseable {
         return this.serversocket.getLocalPort();
     }
 
-    
+
 
     @Override
     public void close() {
@@ -187,25 +194,25 @@ public class CallbackServerInstance implements AutoCloseable {
             response.addHeader(new BasicHeader(HttpHeaders.ACCEPT_CHARSET, "utf-8"));
             //response.addHeader(new BasicHeader(HttpHeaders.CONNECTION, "close"));
 
-            final String method = request.getRequestLine().getMethod().toUpperCase(Locale.ENGLISH);
+            final String method = request.getMethod().toUpperCase(Locale.ENGLISH);
             if (method.equals("OPTIONS")) {
-                response.setStatusCode(HttpStatus.SC_NO_CONTENT);
+                response.setCode(HttpStatus.SC_NO_CONTENT);
                 Log.log.debug("OPTIONS");
                 return;
             }
 
-            final String target = request.getRequestLine().getUri();
+            final String target = request.getRequestUri();
             Log.log.info(String.format("URL: %s, Method: %s", target, method));
 
             if (!target.equals("/")) {
-                response.setStatusCode(HttpStatus.SC_NOT_FOUND);
+                response.setCode(HttpStatus.SC_NOT_FOUND);
                 response.setEntity(new StringEntity("NG\nNot Found", ContentType.create("text/plain", StandardCharsets.UTF_8)));
                 Log.log.warn("Invalid Request: Not Found");
                 return;
             }
 
             if (method.equals("GET")) {
-                response.setStatusCode(HttpStatus.SC_OK);
+                response.setCode(HttpStatus.SC_OK);
                 response.setEntity(new StringEntity("OK", ContentType.create("text/plain", StandardCharsets.UTF_8)));
                 Log.log.debug("GET");
                 return;
@@ -222,21 +229,21 @@ public class CallbackServerInstance implements AutoCloseable {
             }
 
             if (!authorized) {
-                response.setStatusCode(HttpStatus.SC_UNAUTHORIZED);
+                response.setCode(HttpStatus.SC_UNAUTHORIZED);
                 response.setEntity(new StringEntity("NG\nInvalid Key", ContentType.create("text/plain", StandardCharsets.UTF_8)));
                 Log.log.warn("Invalid Request: Invalid Key");
                 return;
             }
 
             if (!method.equals("POST")) {
-                response.setStatusCode(HttpStatus.SC_METHOD_NOT_ALLOWED);
+                response.setCode(HttpStatus.SC_METHOD_NOT_ALLOWED);
                 response.setEntity(new StringEntity("NG\nMethod Not Allowed", ContentType.create("text/plain", StandardCharsets.UTF_8)));
                 Log.log.warn("Invalid Request: Method Not Allowed");
                 return;
             }
 
             if (!(request instanceof HttpEntityEnclosingRequest)) {
-                response.setStatusCode(HttpStatus.SC_BAD_REQUEST);
+                response.setCode(HttpStatus.SC_BAD_REQUEST);
                 response.setEntity(new StringEntity("NG\nNo Request Data", ContentType.create("text/plain", StandardCharsets.UTF_8)));
                 Log.log.warn("Invalid Request: No Request Data");
                 return;
@@ -252,13 +259,13 @@ public class CallbackServerInstance implements AutoCloseable {
                     EmojiDiscordList.class, "Parsing Web Callback");
 
             if (callback==null||StringUtils.isEmpty(callback.id)||StringUtils.isEmpty(callback.name)) {
-                response.setStatusCode(HttpStatus.SC_BAD_REQUEST);
+                response.setCode(HttpStatus.SC_BAD_REQUEST);
                 response.setEntity(new StringEntity("NG\nInvalid Json", ContentType.create("text/plain", StandardCharsets.UTF_8)));
                 Log.log.warn("Invalid Request: Invalid Json");
                 return;
             }
 
-            response.setStatusCode(HttpStatus.SC_OK);
+            response.setCode(HttpStatus.SC_OK);
             response.setEntity(new StringEntity("OK", ContentType.create("text/plain", StandardCharsets.UTF_8)));
             CallbackServerInstance.this.consumer.accept(callback);
         }
