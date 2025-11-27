@@ -61,7 +61,7 @@ ext {
 		assert project.isProperty('version_major'): 'missing property: version_major'
 		assert project.isProperty('version_minor'): 'missing property: version_minor'
 		assert project.isProperty('version_patch'): 'missing property: version_patch'
-		mod_version_min = "${project.version_major}.${project.version_minor}.${project.version_patch}"
+		mod_version_min = "2.1.1"
 	}
 	println("ModVersion: ${mod_version_min}")
 
@@ -72,7 +72,7 @@ ext {
 			return [".${mod_buildnumber}", '']
 	})()
 
-	mod_version = "${mod_version_min}${mod_version_build}"
+	mod_version = "${mod_version_min}"
 	mod_version_full = "${mod_version}${mod_version_meta}"
 	mod_artifacts_dir = file "artifacts/${mod_version_min}/${mod_version_full}"
 
